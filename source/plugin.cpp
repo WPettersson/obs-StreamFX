@@ -56,6 +56,11 @@
 #ifdef ENABLE_FILTER_TRANSFORM
 #include "filters/filter-transform.hpp"
 #endif
+
+#ifdef ENABLE_FILTER_VIDEO_DENOISING
+#include "filters/filter-video-denoising.hpp"
+#endif
+
 #ifdef ENABLE_FILTER_VIDEO_SUPERRESOLUTION
 #include "filters/filter-video-superresolution.hpp"
 #endif
@@ -161,6 +166,11 @@ try {
 #ifdef ENABLE_FILTER_TRANSFORM
 		streamfx::filter::transform::transform_factory::initialize();
 #endif
+
+#ifdef ENABLE_FILTER_VIDEO_DENOISING
+		streamfx::filter::video_denoising::video_denoising_factory::initialize();
+#endif
+
 #ifdef ENABLE_FILTER_VIDEO_SUPERRESOLUTION
 		streamfx::filter::video_superresolution::video_superresolution_factory::initialize();
 #endif
@@ -250,6 +260,11 @@ try {
 #ifdef ENABLE_FILTER_TRANSFORM
 		streamfx::filter::transform::transform_factory::finalize();
 #endif
+
+#ifdef ENABLE_FILTER_VIDEO_DENOISING
+		streamfx::filter::video_denoising::video_denoising_factory::finalize();
+#endif
+
 #ifdef ENABLE_FILTER_VIDEO_SUPERRESOLUTION
 		streamfx::filter::video_superresolution::video_superresolution_factory::finalize();
 #endif
